@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  roomid: 1
+  starttime: 2018-07-31 19:23:15
+  endtime: 2018-07-31 19:23:15
+
+two:
+  roomid: 1
+  starttime: 2018-07-31 19:23:15
+  endtime: 2018-07-31 19:23:15
