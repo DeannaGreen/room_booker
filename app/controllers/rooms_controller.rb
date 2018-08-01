@@ -11,6 +11,11 @@ class RoomsController < ApplicationController
   # GET /rooms/1.json
   def show
   end
+  
+  def bookings
+    @roombookings = Roombooking.all
+  end
+  
 
   # GET /rooms/new
   def new
