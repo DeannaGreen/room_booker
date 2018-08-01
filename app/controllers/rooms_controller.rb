@@ -17,7 +17,7 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
-  # GET /rooms/1/edit
+  # GET /rooms/1/panel
   def panel
   end
 
