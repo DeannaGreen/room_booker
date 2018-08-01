@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :roomid %>
+    <%= form.label :room_id %>
     <% options = options_from_collection_for_select(@rooms, 'id', 'roomname') %>
-    <%= form.select :roomid,  options %>
+    <%= form.select :room_id,  options %>
   </div>
 
   <div class="field">

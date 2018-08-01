@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
   end
   
   def bookings
-    @roombookings = Roombooking.where(roomid:@room.id)
+    @roombookings = Roombooking.where(room_id:@room.id)
   end
   
 
@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/panel
   def panel
-    @bookings = Roombooking.where(roomid: @room.id)
+    @bookings = Roombooking.where(room_id: @room.id)
   end
 
   # GET /rooms/1/edit
