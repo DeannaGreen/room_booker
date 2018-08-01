@@ -3,7 +3,7 @@
     <div class="col-11">
     </div>
   <div class="col=1">
-     <div class="panelclock" id="txt">10.25</div>
+     <div class="panelclock" id="panelClock">10.25</div>
     </div>
      
   
@@ -23,3 +23,23 @@
   <strong>Roomname:</strong>
   <%= @room.roomname %>
 </p>
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('panelClock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+  
+startTime();
+</script>
