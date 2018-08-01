@@ -6,7 +6,11 @@ class RoombookingsController < ApplicationController
   def index
     @roombookings = Roombooking.all
   end
-
+  
+  def byroomid
+    @roombookings = Roombooking.all
+  end
+  
   # GET /roombookings/1
   # GET /roombookings/1.json
   def show
