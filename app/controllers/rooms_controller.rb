@@ -19,6 +19,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/panel
   def panel
+    @bookings = Roombooking.where(roomid: @room.id
   end
 
   # GET /rooms/1/edit
