@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :set_room, only: [:show, :edit, :update, :destroy , :panel]
 
   # GET /rooms
   # GET /rooms.json
@@ -18,9 +18,12 @@ class RoomsController < ApplicationController
   end
 
   # GET /rooms/1/edit
-  def edit
+  def panel
   end
 
+  # GET /rooms/1/edit
+  def edit
+  end
   # POST /rooms
   # POST /rooms.json
   def create
