@@ -12,6 +12,32 @@
 
 </div>
 
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Roomid</th>
+      <th>Starttime</th>
+      <th>Endtime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |roombooking| %>
+      <tr>
+        <td><%= roombooking.id %></td>
+        <td><%= roombooking.roomid %></td>
+        <td><%= roombooking.starttime %></td>
+        <td><%= roombooking.endtime %></td>
+        <td><%= link_to 'Show', roombooking %></td>
+        <td><%= link_to 'Edit', edit_roombooking_path(roombooking) %></td>
+        <td><%= link_to 'Destroy', roombooking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <div class="panelcontainer">
 
