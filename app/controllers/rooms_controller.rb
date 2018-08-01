@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update, :destroy , :panel]
+  before_action :set_room, only: [:show, :edit, :update, :destroy , :panel ,:bookings]
 
   # GET /rooms
   # GET /rooms.json
@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
   end
   
   def bookings
-    @roombookings = Roombooking.all
+    @roombookings = Roombooking.where roomid:@room.id)
   end
   
 
