@@ -7,6 +7,7 @@ class RoombookingsController < ApplicationController
     @roombookings = Roombooking.all
   end
 
+  
   # GET /roombookings/1
   # GET /roombookings/1.json
   def show

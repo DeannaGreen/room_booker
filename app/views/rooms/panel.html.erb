@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-11">
+    </div>
+  <div class="col=1">
+     <div class="panelclock" id="panelClock">10.25</div>
+    </div>
+     
+  
+  </div>
+  
+
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Roomid</th>
+      <th>Starttime</th>
+      <th>Endtime</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |roombooking| %>
+      <tr>
+        <td><%= roombooking.id %></td>
+        <td><%= roombooking.roomid %></td>
+        <td><%= roombooking.starttime %></td>
+        <td><%= roombooking.endtime %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<div class="panelcontainer">
+
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Roomname:</strong>
+  <%= @room.roomname %>
+</p>
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('panelClock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+  
+startTime();
+</script>
