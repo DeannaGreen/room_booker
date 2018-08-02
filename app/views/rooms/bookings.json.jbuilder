@@ -1,4 +1,4 @@
 {
-    "title" : "<%= @roombookings.id.to_json %>"
+    "title": "<%= @roombookings.id.to_json %>"
 }
 
