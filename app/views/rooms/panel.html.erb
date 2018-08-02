@@ -184,7 +184,7 @@ function testAjax() {
   $.ajax({
     url:"https://desolate-caverns-87593.herokuapp.com/rooms/1/bookings.json",  
     success:function(data) {
-      jQuery("#schedule").timeSchedule(data); 
+      jQuery("#schedule").timeSchedule({rows : data }); 
     }
   });
 }
