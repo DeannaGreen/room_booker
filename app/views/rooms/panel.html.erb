@@ -180,23 +180,16 @@ function checkTime(i) {
   
 startTime();
   
-  jQuery("#schedule").timeSchedule({
-  rows : {
-    '1' : {
-      title : 'Upstairs',
-      schedule:[{
-        start:'09:00',
-        end:'11:00',
-        text:'Dave - Planning',
-        data:{}
-      },{
-        start:'12:00',
-        end:'14:00',
-        text:'Maria - Catchup',
-        data:{}
-      }]
-    },},
-});
+function testAjax() {
+  $.ajax({
+    url:"https://desolate-caverns-87593.herokuapp.com/rooms/1/bookings.json",  
+    success:function(data) {
+      jQuery("#schedule").timeSchedule(data); 
+    }
+  });
+}
+	
+ testAjax();
 
   
 </script>
