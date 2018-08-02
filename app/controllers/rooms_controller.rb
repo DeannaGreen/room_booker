@@ -18,7 +18,7 @@ class RoomsController < ApplicationController
     @roombookings = Roombooking.where(room_id:@room.id)
     
     format.json
-  end
+  
   end
   
 
