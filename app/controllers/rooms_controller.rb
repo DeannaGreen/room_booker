@@ -14,11 +14,11 @@ class RoomsController < ApplicationController
   end
   
   def bookings
-    response.headers["Content-Type"] = 'application/json'
+
     @roombookings = Roombooking.where(room_id:@room.id)
     respond_to do |format|
+    format.html
     format.json
-  
   end
   
 
