@@ -23,31 +23,11 @@
       <h1 class="display-4"><div id="panelClock"></div></h1>
     </div>
   </div>
-  <div id="hourly"></div>
-  <div id="timeline"></div>
+  <div style="padding: 0 0 40px;">
+    <div id="schedule"></div>
+  </div>
+ 
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Roomid</th>
-      <th>Starttime</th>
-      <th>Endtime</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bookings.each do |roombooking| %>
-      <tr>
-        <td><%= roombooking.id %></td>
-        <td><%= roombooking.room_id %></td>
-        <td><%= roombooking.starttime %></td>
-        <td><%= roombooking.endtime %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 
 <div class="panelcontainer">
@@ -77,34 +57,6 @@ function checkTime(i) {
   
 startTime();
   
-  $('#hourly').timestack({
-  span: 'hour',
-  data: [
-    {
-      title: 'Bob OOO',
-      start: '2012-08-26T09:00',
-      end: '2012-08-26T17:00',
-      color: 'rgb(149, 203, 255)'
-    },
-    {
-      title: 'Meeting',
-      start: '2012-08-26T09:00',
-      end: '2012-08-26T10:00',
-      color: 'rgb(255, 149, 192)'
-    },
-    {
-      title: 'Lunch',
-      start: '2012-08-26T12:00',
-      end: '2012-08-26T13:00',
-      color: 'rgb(151, 255, 177)'
-    },
-    {
-      title: 'Code review',
-      start: '2012-08-26T12:30',
-      end: '2012-08-26T15:30',
-      color: 'rgb(255, 149, 192)'
-    }
-  ]
-});
+
   
 </script>
