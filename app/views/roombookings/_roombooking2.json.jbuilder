@@ -1,4 +1,4 @@
 {
-    "first_name": "<%= @roombooking.id.to_json %>",
+    "first_name": "dave"
     
 }
