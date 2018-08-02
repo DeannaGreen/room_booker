@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy , :panel ,:bookings]
-
+  before_action :set_headers only:[:bookings]
+  
   # GET /rooms
   # GET /rooms.json
   def index
@@ -84,4 +85,8 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:roomname)
     end
+   def set_headers
+    response.headers['Content-Type'] = 'application/vnd.api+json'
+  end
+  
 end
