@@ -14,7 +14,6 @@ class RoomsController < ApplicationController
   end
   
   def bookings
-    response.headers['Content-Type'] = 'application/vnd.api+json'
     @roombookings = Roombooking.where(room_id:@room.id)
     
     format.json
