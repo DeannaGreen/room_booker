@@ -1,2 +1,4 @@
-json.extract! roombooking, :id, :room_id, :starttime, :endtime, :created_at, :updated_at
-json.url roombooking_url(roombooking, format: :json)
+{
+    "first_name": "<%= @roombooking.id.to_json %>",
+    
+}
