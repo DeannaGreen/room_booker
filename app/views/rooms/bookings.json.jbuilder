@@ -1,7 +1,1 @@
-
-    <% @roombookings.each do |roombooking| %>
-    
-        <%= roombooking.id %>
-   
-    <% end %>
-
+json.array! @rooms, partial: 'rooms/room', as: :room
