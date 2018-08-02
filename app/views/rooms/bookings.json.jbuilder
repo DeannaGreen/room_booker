@@ -1,1 +1,4 @@
-json.array! @roombookings, partial: 'roombookings/roombooking', as: :roombooking
+{
+    "title" : "<%= @roombookings.id.to_json %>"
+}
+
