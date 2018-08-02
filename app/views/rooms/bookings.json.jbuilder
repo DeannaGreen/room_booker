@@ -1,1 +1,1 @@
-format.json render :partial => "rooms/bookings2.json", bookings: @bookings
+json.partial! "rooms/bookings2.json", bookings: @bookings
