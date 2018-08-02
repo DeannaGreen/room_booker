@@ -1,1 +1,1 @@
-json.partial! "roombookings/roombooking2", roombooking: @roombooking
+json.partial! "roombookings/roombooking2", roombooking: @bookings
