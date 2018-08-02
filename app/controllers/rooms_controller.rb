@@ -14,6 +14,10 @@ class RoomsController < ApplicationController
   
   def bookings
     @roombookings = Roombooking.where(room_id:@room.id)
+    respond_to do |format|
+    format.html
+    format.json
+  end
   end
   
 
