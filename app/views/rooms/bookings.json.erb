@@ -1,24 +1,19 @@
-
-      
-
-		
 {
 	"1": {
-	 <% @roombookings.each do |book| %>	
+	
 
 		"title": "Room_<%= book.room_id %>",
-		"schedule": [{
-			"start": "<%= book.starttime %>",
-			"end": "<%= convert_time(book.endtime) %>",
+		"schedule": [
+			 <% @roombookings.each do |book| %>	
+			{
+			"start": "<%= book.starttime.strftime(%H:%M) %>",
+			"end": "<%= convert_time(book.endtime.strftime(%H:%M)) %>",
 			"text": "Text Area",
 			"data": {}
-		}, {
-			"start": "11:00",
-			"end": "14:00",
-			"text": "Text Area",
-			"data": {}
-		}]
+		},
+		<% end %>
+		]
           
-  	<% end %>
+  	
 	}
 }
