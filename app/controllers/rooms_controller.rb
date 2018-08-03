@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
   
   def bookings
 
-    @roombookings = Roombooking.where(room_id:@room.id)
+    @roombookings = Roombooking.where(room_id:@room.id).group_by(&:room_id)
     respond_to do |format|
       format.html
       format.json
