@@ -2,7 +2,7 @@
 	<% @i = 0 %>
 	<% @bookings.each do |roomid , roombookings| %>
 	<% @i += 1 %>
-	"<%= i %>": {
+	"<%= @i %>": {
 		"title": "Room_<%= roomid %>" ,
 		"schedule": [
 			 <% roombookings.each do | book| %>	
