@@ -1,6 +1,7 @@
 {
-	<% @bookings.each_with_index do |roomid , roombookings, index| %>	
-	"<%= index %>": {
+	<% @bookings.each do |roomid , roombookings| %>
+	<% i += 1 %>
+	"<%= i %>": {
 		"title": "Room_<%= roomid %>" ,
 		"schedule": [
 			 <% roombookings.each do | book| %>	
