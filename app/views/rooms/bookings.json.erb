@@ -9,7 +9,7 @@
 		"title": "Room_<%= book.room_id %>",
 		"schedule": [{
 			"start": "<%= book.starttime %>",
-			"end": "12:00",
+			"end": "<%= convert_time(book.endtime) %>",
 			"text": "Text Area",
 			"data": {}
 		}, {
