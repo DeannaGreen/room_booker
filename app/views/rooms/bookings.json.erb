@@ -1,7 +1,7 @@
 {
 	<% @bookings.each do |roomid , roombookings| %>	
 	"1": {
-		"title": "Room_" <%= roomid %>,
+		"title": "Room_<%= roomid %>" ,
 		"schedule": [
 			 <% roombookings.each do | book| %>	
 			{
@@ -9,7 +9,10 @@
 			"end": "<%= book.endtime.strftime("%H:%M") %>",
 			"text": "Text Area",
 			"data": {}
-		},
+		}
+		<% if(book != book.last) %>
+     		,
+     		<% end %>
 		<% end %>
 		]
           
