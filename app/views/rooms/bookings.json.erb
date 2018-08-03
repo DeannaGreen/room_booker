@@ -6,8 +6,8 @@
 		"schedule": [
 			 <% @roombookings.each do |book| %>	
 			{
-			"start": "<%= book.starttime.strftime(%H:%M) %>",
-			"end": "<%= convert_time(book.endtime.strftime(%H:%M)) %>",
+			"start": "<%= book.starttime.strftime("%H:%M") %>",
+			"end": "<%= book.endtime.strftime("%H:%M") %>",
 			"text": "Text Area",
 			"data": {}
 		},
