@@ -4,7 +4,7 @@ class RoombookingsController < ApplicationController
   # GET /roombookings
   # GET /roombookings.json
   def index
-    @roombookings = Roombooking.all.include(:room)
+    @roombookings = Roombooking.include(:room).all
   end
 
   
