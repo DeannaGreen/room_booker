@@ -1,13 +1,14 @@
- <% @roombookings.each do |book| %>
+
       
-          <%= book.id %>
-  <% end %>
+
 		
 {
 	"1": {
-		"title": "TitleArea",
+	 <% @roombookings.each do |book| %>	
+
+		"title": "Room_<%= book.room_id %>",
 		"schedule": [{
-			"start": "09:00",
+			"start": "<%= book.starttime %>",
 			"end": "12:00",
 			"text": "Text Area",
 			"data": {}
@@ -17,5 +18,7 @@
 			"text": "Text Area",
 			"data": {}
 		}]
+          
+  	<% end %>
 	}
 }
