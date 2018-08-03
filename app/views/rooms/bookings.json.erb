@@ -1,9 +1,9 @@
 {
-	<% @roombookings.each do |roomid , Roombookings2| %>	
+	<% @bookings.each do |roomid , Roombookings| %>	
 	"1": {
 		"title": "Room_" <%= roomid %>,
 		"schedule": [
-			 <% @roombookings2.each do | book| %>	
+			 <% @roombookings.each do | book| %>	
 			{
 			"start": "<%= book.starttime.strftime("%H:%M") %>",
 			"end": "<%= book.endtime.strftime("%H:%M") %>",
