@@ -7,3 +7,22 @@
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
+
+<h2>Bookings</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>Start</th>
+			<th>End</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @bookings.each do |booking| %>
+			<tr>
+				<td><%= booking.starttime.strftime('%d-%m-%Y: %I:%m%P') %></td>
+				<td><%= booking.endtime.strftime('%d-%m-%Y: %I:%m%P') %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
