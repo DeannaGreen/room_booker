@@ -9,7 +9,7 @@
 			{
 			"start": "<%= book.starttime.strftime("%H:%M") %>",
 			"end": "<%= book.endtime.strftime("%H:%M") %>",
-			"text": "Text Area",
+			"text": "<%= book.description %>",
 			"data": {}
 		} <% if(book != roombookings.last) %> , <% end %>	
 		<% end %>
