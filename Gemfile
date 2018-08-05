@@ -15,6 +15,8 @@ gem 'bootstrap', '~> 4.0.0'
 
 gem 'jquery-rails'
 
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+
 group :production do
   gem 'pg'
 end
