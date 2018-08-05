@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Roomid:</strong>
-  <%= @roombooking.room_id %>
+  <strong>Room:</strong>
+  <%= @roombooking.room.roomname %>
 </p>
 
 <p>
-  <strong>Starttime:</strong>
-  <%= @roombooking.starttime %>
+  <strong>Start Time:</strong>
+  <%= @roombooking.starttime.strftime('%d-%m-%Y: %I:%m%P') %>
 </p>
 
 <p>
-  <strong>Endtime:</strong>
-  <%= @roombooking.endtime %>
+  <strong>End Time:</strong>
+  <%= @roombooking.endtime.strftime('%d-%m-%Y: %I:%m%P') %>
 </p>
 
 <%= link_to 'Edit', edit_roombooking_path(@roombooking) %> |

@@ -13,15 +13,15 @@
 <table>
 	<thead>
 		<tr>
-			<th>Start</th>
-			<th>End</th>
+			<th style="padding:0 15px;">Start Time</th>
+			<th style="padding:0 15px;">End Time</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @bookings.each do |booking| %>
 			<tr>
-				<td><%= booking.starttime.strftime('%d-%m-%Y: %I:%m%P') %></td>
-				<td><%= booking.endtime.strftime('%d-%m-%Y: %I:%m%P') %></td>
+				<td style="padding:0 15px;"><%= booking.starttime.strftime('%d-%m-%Y: %I:%m%P') %></td>
+				<td style="padding:0 15px;"><%= booking.endtime.strftime('%d-%m-%Y: %I:%m%P') %></td>
 			</tr>
 		<% end %>
 	</tbody>
