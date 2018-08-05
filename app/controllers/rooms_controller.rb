@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy , :panel ,:bookings]
-
+ 
+  
   # GET /rooms
   # GET /rooms.json
   def index
@@ -14,7 +15,12 @@ class RoomsController < ApplicationController
   end
   
   def bookings
-    @roombookings = Roombooking.where(room_id:@room.id)
+
+    @bookings = Roombooking.includes(:room).where(room_id:@room.id).group_by(&:room)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
   
 
@@ -81,4 +87,8 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:roomname)
     end
+   def set_headers
+    response.headers['Content-Type'] = 'application/vnd.api+json'
+  end
+  
 end
