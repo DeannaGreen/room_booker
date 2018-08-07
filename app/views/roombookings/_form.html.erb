@@ -11,28 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :room_id %>
-    <% options = options_from_collection_for_select(@rooms, 'id', 'roomname') %>
-    <%= form.select :room_id,  options %>
-  </div>
+  <form>
+    <div class="form-group">
+      <div class="col-auto">
+        <label for="chooseRoom">Room</label>
+        <select class="form-control" id="chooseRoom">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :starttime %>
-    <%= form.datetime_select :starttime %>
-  </div>
+    <div class ="form-group">
+      <div class="field">
+        <%= form.label :room_id %>
+        <% options = options_from_collection_for_select(@rooms, 'id', 'roomname') %>
+        <%= form.select :room_id,  options %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :endtime %>
-    <%= form.datetime_select :endtime %>
-  </div>
-
-   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class ="form-group">
+      <div class="field">
+        <%= form.label :starttime %>
+        <%= form.datetime_select :starttime %>
+      </div>
+    </div>
+    <div class ="form-group">
+      <div class="field">
+        <%= form.label :endtime %>
+        <%= form.datetime_select :endtime %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-auto">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter Description">
+      </div>
+    </div>
+    <div class='col-auto'>
+      <button type="submit" class="btn btn-primary">Create Room</button>
+    </div>
+  </form>
 <% end %>

@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :roomname %>
-    <%= form.text_field :roomname %>
+  <div class="form-group">
+    <div class="col-auto">
+      <label for="roomname">Room Name</label>
+      <input type="text" class="form-control" id="roomname" placeholder="Enter Room Name">
+    </div>
+  </div>
+  <div class='col-auto'>
+    <button type="submit" class="btn btn-primary">Create Room</button>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
