@@ -5,5 +5,10 @@
     </li>
     <li class="<%= 'active' if current_page?(rooms_path) %>"><%= link_to "Rooms", rooms_path(), class: "nav-link nav-item" %></li>
     <li class="<%= 'active' if current_page?(roombookings_path) %>"><%= link_to "Bookings", roombookings_path(), class: "nav-link nav-item" %></li>
+    <% if current_user %>
+      <li><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link nav-item", :method => :delete %></li>
+    <% else %>
+      <li><%= link_to 'Sign in', new_user_session_path, class: "nav-link nav-item" %></li>
+    <% end %>
   </ul>
 </nav>
