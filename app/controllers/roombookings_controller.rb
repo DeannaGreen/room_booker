@@ -17,11 +17,13 @@ class RoombookingsController < ApplicationController
   def new
     @roombooking = Roombooking.new
     @rooms = Room.all
+    @users = User.all
   end
 
   # GET /roombookings/1/edit
   def edit
     @rooms = Room.all
+    @users = User.all
   end
 
   # POST /roombookings
@@ -29,6 +31,7 @@ class RoombookingsController < ApplicationController
   def create
     @roombooking = Roombooking.new(roombooking_params)
     @rooms = Room.all
+    @users = User.all
 
     respond_to do |format|
       if @roombooking.save
@@ -73,6 +76,6 @@ class RoombookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def roombooking_params
-      params.require(:roombooking).permit(:room_id, :starttime, :endtime, :description)
+      params.require(:roombooking).permit(:room_id, :starttime, :endtime, :description, :user_id)
     end
 end
