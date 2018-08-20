@@ -29,7 +29,6 @@ class RoombookingsController < ApplicationController
   def create
     @roombooking = Roombooking.new(roombooking_params)
     @rooms = Room.all
-    @users = User.all
 
     respond_to do |format|
       if @roombooking.save

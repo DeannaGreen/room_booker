@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_08_10_190023) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
-    t.string "user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
