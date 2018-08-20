@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th style="padding:0 15px;">ID</th>
-      <th style="padding:0 15px;">User</th>
       <th style="padding:0 15px;">Room</th>
       <th style="padding:0 15px;">Start Time</th>
       <th style="padding:0 15px;">End Time</th>
@@ -19,7 +18,6 @@
     <% @roombookings.each do |roombooking| %>
       <tr>
         <td style="padding:0 15px;"><%= roombooking.id %></td>
-        <td style="padding:0 15px;"><%= roombooking.user %></td>
         <td style="padding:0 15px;"><%= roombooking.room.roomname %></td>
         <td style="padding:0 15px;"><%= roombooking.starttime.strftime('%d-%m-%Y: %I:%m%P') %></td>
         <td style="padding:0 15px;"><%= roombooking.endtime.strftime('%d-%m-%Y: %I:%m%P')%></td>
