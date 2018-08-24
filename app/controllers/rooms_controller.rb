@@ -32,7 +32,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1/panel
   def panel
     render layout: 'panel'
-    @bookings = Roombooking.where(room_id: @room.id)
+    @bookings = Roombooking.includes(:user).where(room_id: @room.id)
   end
 
   # GET /rooms/1/edit
