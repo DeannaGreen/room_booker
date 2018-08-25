@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
   
   def bookings
 
-    @bookings = Roombooking.includes(:room).where(room_id:@room.id).group_by(&:room)
+    @bookings = Roombooking.includes(:room,:user).where(room_id:@room.id).group_by(&:room)
     respond_to do |format|
       format.html
       format.json
@@ -32,7 +32,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1/panel
   def panel
     render layout: 'panel'
-    @bookings = Roombooking.where(room_id: @room.id)
+    @bookings = Roombooking.includes(:user).where(room_id: @room.id)
   end
 
   # GET /rooms/1/edit
