@@ -3,28 +3,26 @@
 
   <h1>Rooms</h1>
 
-  <table>
-    <thead>
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Roomname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms.each do |room| %>
       <tr>
-        <th style="padding:0 15px;">ID</th>
-        <th style="padding:0 15px;">Roomname</th>
-        <th colspan="5"></th>
+        <td><%= room.id %></td>
+        <td><%= room.roomname %></td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Panel', panel_room_path(room)  %></td>
+        <td><%= link_to 'Bookings', bookings_room_path(room)  %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    </thead>
-
-    <tbody>
-      <% @rooms.each do |room| %>
-        <tr>
-          <td style="padding:0 15px;"><%= room.id %></td>
-          <td style="padding:0 15px;"><%= room.roomname %></td>
-          <td style="padding:0 5px;"><%= link_to 'Show', room %></td>
-          <td style="padding:0 5px;"><%= link_to 'Edit', edit_room_path(room) %></td>
-          <td style="padding:0 5px;"><%= link_to 'Panel', panel_room_path(room)  %></td>
-          <td style="padding:0 5px;"><%= link_to 'Bookings', bookings_room_path(room)  %></td>
-          <td style="padding:0 5px;"><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
+    <% end %>
+  </tbody>
   </table>
 
   <br>
