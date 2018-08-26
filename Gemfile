@@ -19,6 +19,8 @@ gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 
 gem 'devise'
 
+gem 'bootstrap_form'
+
 group :production do
   gem 'pg'
 end
