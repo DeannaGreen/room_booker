@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paragraph 1:</strong>
+  <%= @home.paragraph_1 %>
+</p>
+
+<p>
+  <strong>Paragraph 2:</strong>
+  <%= @home.paragraph_2 %>
+</p>
+
+<p>
+  <strong>Paragraph 3:</strong>
+  <%= @home.paragraph_3 %>
+</p>
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>
