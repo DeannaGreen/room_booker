@@ -14,22 +14,16 @@
 <div class="container">
   <div class="row">
     <div class="col">
-         <% @todaybookings.each do |roombooking| %>
-      <tr>
-        <td><%= roombooking.id %></td>
-        <td><%= roombooking.room.roomname %></td>
-        <td><%= roombooking.starttime %></td>
-        <td><%= roombooking.endtime %></td>
-      </tr>
-    <% end %>
+      
     </div>
     <div class="col">
     
+      <%= render partial: "rooms/bookings", bookings: @todaybookings  %>
+  
     </div>
   </div>
 </div>
 
-<%= render '/rooms/bookings', home: @home %>
 
 <br>
 
