@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :homes
-   resource :roombookings
+  resources :roombookings
   devise_for :users
   root 'homes#index'
   resources :rooms do
