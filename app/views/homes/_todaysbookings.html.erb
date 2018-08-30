@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Room Bookings for Today</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Room Id</th>
+      <th scope="col">Start Time</th>
+      <th scope="col">End Time</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |roombooking| %>
+      <tr>
+        <td><%= roombooking.id %></td>
+        <td><%= roombooking.room.roomname %></td>
+        <td><%= roombooking.starttime %></td>
+        <td><%= roombooking.endtime %></td>
+        <td><%= link_to 'Show', roombooking %></td>
+        <td><%= link_to 'Edit', edit_roombooking_path(roombooking) %></td>
+        <td><%= link_to 'Destroy', roombooking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="btn btn-dark">
+<%= link_to 'New Roombooking', new_roombooking_path %>
+</div>

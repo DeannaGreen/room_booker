@@ -5,6 +5,9 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
+    @todaybookings = Roombooking.all
+    @tomorrowbookings = Roombooking.all.where("starttime >= ?", Date.today )
+    #includes(:room,:user).where(room_id: @room.id)
   end
 
   # GET /homes/1
