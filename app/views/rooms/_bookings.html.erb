@@ -1,7 +1,6 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">Room Id</th>
       <th scope="col">Start Time</th>
       <th scope="col">End Time</th>
@@ -12,7 +11,6 @@
   <tbody>
     <% bookings.each do |roombooking| %>
       <tr>
-        <td><%= roombooking.id %></td>
         <td><%= roombooking.room.roomname %></td>
         <td><%= roombooking.starttime %></td>
         <td><%= roombooking.endtime %></td>
