@@ -7,7 +7,7 @@ class HomesController < ApplicationController
     @homes = Home.all
     @todaybookings = Roombooking.all.where("date_trunc('day',starttime) = ?", Date.today )
     @tomorrowbookings = Roombooking.all.where("date_trunc('day',starttime) = ?", Date.tomorrow )
-    @yourbookings = Roombooking.all.where("user_id: = ?", @current_user.id)
+    @yourbookings = Roombooking.all.where("user_id: = ?", @current_user)
   end
 
   # GET /homes/1
