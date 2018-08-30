@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :homes
   devise_for :users
   resources :roombookings
-  root 'rooms#index'
+  root 'home#index'
   resources :rooms do
     member do
       get 'panel', to: 'rooms#panel'
