@@ -18,8 +18,8 @@
     </div>
     <div class="col">
     
-      <%= render partial: "rooms/bookings", bookings: @todaybookings  %>
-  
+      <%= render partial: "rooms/bookings", locals: {bookings: @todaybookings} %>
+      
     </div>
   </div>
 </div>
