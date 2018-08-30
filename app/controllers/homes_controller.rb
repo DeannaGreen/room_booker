@@ -5,7 +5,7 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
-    @todaybookings = Roombooking.all.where("starttime >= ?", Date.today )
+    @todaybookings = Roombooking.all.where("date_trunk('day',starttime)= >= ?", Date.today )
     @tomorrowbookings = Roombooking.all.where("starttime >= ?", Date.tomorrow )
     @yourbookings = Roombooking.all
     #.where(user_id: @current_user.id)
