@@ -14,17 +14,17 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>Todays Room Bookings</h1>
+      <h2>Todays Bookings</h2>
       <%= render partial: "rooms/bookings", locals: {bookings: @todaybookings} %>    
     </div>
     <div class="col">
-      <h1>Tomorrows Room Bookings</h1>
+      <h2>Tomorrows Bookings</h2>
       <%= render "rooms/bookings", bookings: @tomorrowbookings %>
     </div>
   </div>
    <div class="row">
     <div class="col">
-      <h1>Your Room Bookings</h1>
+      <h2>Your Bookings</h2>
       <%= render partial: "rooms/bookings", locals: {bookings: @yourbookings} %>    
     </div>
   </div>
