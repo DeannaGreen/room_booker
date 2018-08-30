@@ -7,7 +7,8 @@ class HomesController < ApplicationController
     @homes = Home.all
     @todaybookings = Roombooking.all.where("starttime >= ?", Date.today )
     @tomorrowbookings = Roombooking.all.where("starttime >= ?", Date.tomorrow )
-    #includes(:room,:user).where(room_id: @room.id)
+    @yourbookings = Roombooking.all
+    #.where(user_id: @current_user.id)
   end
 
   # GET /homes/1

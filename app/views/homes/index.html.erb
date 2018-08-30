@@ -17,9 +17,12 @@
       <%= render partial: "rooms/bookings", locals: {bookings: @todaybookings} %>    
     </div>
     <div class="col">
-    
       <%= render "rooms/bookings", bookings: @tomorrowbookings %>
-      
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+      <%= render partial: "rooms/bookings", locals: {bookings: @yourbookings} %>    
     </div>
   </div>
 </div>
