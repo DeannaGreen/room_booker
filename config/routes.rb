@@ -10,4 +10,10 @@ Rails.application.routes.draw do
     end
   end 
   
+  resources :roombookings do
+    member do
+      get 'mybookings', to: 'roombookings#mybookings'
+    end
+  end 
+  
 end
