@@ -2,12 +2,13 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
-    <li class="<%= 'active' if controller.controller_name == "homes" %>"><%= link_to "Home", homes_path(), class: "nav-link nav-item" %></li>
-    <li class="<%= 'active' if controller.controller_name == "rooms" %>"><%= link_to "Rooms", rooms_path(), class: "nav-link nav-item" %></li>
-    <li class="<%= 'active' if controller.controller_name == "roombookings" %>"><%= link_to "Bookings", roombookings_path(), class: "nav-link nav-item" %></li>
     <% if current_user %>
-      <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link nav-item", :method => :delete %></li>
-      <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Your Profile', edit_user_registration_path, class: "nav-link nav-item" %></li>
+      <li class="<%= 'active' if controller.controller_name == "homes" %>"><%= link_to "Home", homes_path(), class: "nav-link nav-item" %></li>
+      <li class="<%= 'active' if controller.controller_name == "rooms" %>"><%= link_to "Rooms", rooms_path(), class: "nav-link nav-item" %></li>
+      <li class="<%= 'active' if controller.controller_name == "roombookings" %>"><%= link_to "Bookings", roombookings_path(), class: "nav-link nav-item" %></li>
+      <li class="<%= 'active' if controller.controller_name == "registrations" %>"><%= link_to 'Your Profile', edit_user_registration_path, class: "nav-link nav-item" %></li>
+       <li class="<%= 'active' if controller.controller_name == "" %>"><%= link_to 'My Bookings', edit_user_registration_path, class: "nav-link nav-item" %></li>
+       <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link nav-item", :method => :delete %></li>
     <% else %>
       <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Sign in', new_user_session_path, class: "nav-link nav-item" %></li>
     <% end %>
