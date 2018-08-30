@@ -14,11 +14,11 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      
+      <%= render partial: "rooms/bookings", locals: {bookings: @todaybookings} %>    
     </div>
     <div class="col">
     
-      <%= render partial: "rooms/bookings", locals: {bookings: @todaybookings} %>
+      <%= render partial: "rooms/bookings", locals: {bookings: @tomorrowbookings } %>
       
     </div>
   </div>
