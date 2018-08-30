@@ -14,6 +14,7 @@ class RoombookingsController < ApplicationController
       format.html
       format.json
     end
+    render 'room/bookings'
   end
   
   # GET /roombookings/1
