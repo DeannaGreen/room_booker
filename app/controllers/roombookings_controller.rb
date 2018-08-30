@@ -8,8 +8,7 @@ class RoombookingsController < ApplicationController
   end
 
    def mybookings
-
-    @bookings = Roombooking.includes(:room,:user).where(room_id: @room.id)
+    @bookings = Roombooking.includes(:room,:user).where("user_id = '?'", current_user.id)
     # .group_by(&:room)
     respond_to do |format|
       format.html
