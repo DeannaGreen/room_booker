@@ -7,6 +7,15 @@ class RoombookingsController < ApplicationController
     @roombookings = Roombooking.includes(:room, :user).all
   end
 
+   def mybookings
+
+    @bookings = Roombooking.includes(:room,:user).where(room_id: @room.id)
+    # .group_by(&:room)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
   
   # GET /roombookings/1
   # GET /roombookings/1.json
