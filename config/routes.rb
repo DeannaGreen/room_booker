@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end 
   
-  resources :roombookings do
+  resource :roombookings do
      get 'mybookings', to: 'roombookings#mybookings'
   end 
   
