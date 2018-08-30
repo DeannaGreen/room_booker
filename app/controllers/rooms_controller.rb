@@ -16,7 +16,8 @@ class RoomsController < ApplicationController
   
   def bookings
 
-    @bookings = Roombooking.includes(:room,:user).where(room_id: @room.id)
+    @bookings = Roombooking.all
+    # includes(:room,:user).where(room_id: @room.id)
     # .group_by(&:room)
     respond_to do |format|
       format.html
