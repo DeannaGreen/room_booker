@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :homes
+  resource :roombookings do
+     get 'mybookings', to: 'roombookings#mybookings'
+  end 
   resources :roombookings
   devise_for :users
   root 'homes#index'
@@ -10,8 +13,6 @@ Rails.application.routes.draw do
     end
   end 
   
-  resource :roombookings do
-     get 'mybookings', to: 'roombookings#mybookings'
-  end 
+
   
 end
