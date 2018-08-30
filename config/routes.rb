@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   end 
   
   resources :roombookings do
-    member do
-      get 'mybookings', to: 'roombookings#mybookings'
-    end
+     get 'mybookings', to: 'roombookings#mybookings'
   end 
   
 end
