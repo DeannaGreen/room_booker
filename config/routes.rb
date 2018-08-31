@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     member do
       get 'panel', to: 'rooms#panel'
       get 'bookings', to: 'rooms#bookings'
+      get 'jsonbookings', to: 'rooms#jsonbookings'
     end
   end 
   
