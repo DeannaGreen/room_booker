@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :homes 
-  resources :roombookings do
-      get 'mybookings', to: 'roombookings#mybookings'
-  end
-    
-get 'profile', to: 'users#show'
+  resources :roombookings
+  
+  get 'mybookings', to: 'roombookings#mybookings'
+      
+  get 'profile', to: 'users#show'
   end 
   devise_for :users
   root 'homes#index'
