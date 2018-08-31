@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'mybookings', to: 'roombookings#mybookings'
       
   get 'profile', to: 'users#show'
-  end 
+  
   devise_for :users
   root 'homes#index'
   resources :rooms do
