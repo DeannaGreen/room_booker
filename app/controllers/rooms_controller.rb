@@ -16,14 +16,13 @@ class RoomsController < ApplicationController
   
   def bookings
 
-    @bookings = Roombooking.includes(:room,:user).where(room_id: @room.id)
-    # .group_by(&:room)
+    @bookings = Roombooking.includes(:room,:user).where(room_id: @room.id).group_by(&:room)
     respond_to do |format|
       format.html
       format.json
     end
   end
-  
+
 
   # GET /rooms/new
   def new
