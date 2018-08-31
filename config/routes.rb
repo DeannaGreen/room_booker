@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :homes
-  resource :roombookings do
-     get 'mybookings', to: 'roombookings#mybookings'
+  resources :homes 
+  resources :roombookings do
+      get 'mybookings', to: 'roombookings#mybookings'
+  end
+    
+get 'profile', to: 'users#show'
   end 
-  resources :roombookings
   devise_for :users
   root 'homes#index'
   resources :rooms do
