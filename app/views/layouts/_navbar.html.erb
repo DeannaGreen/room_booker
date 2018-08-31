@@ -7,7 +7,7 @@
       <li class="<%= 'active' if controller.controller_name == "rooms" %>"><%= link_to "Rooms", rooms_path(), class: "nav-link nav-item" %></li>
       <li class="<%= 'active' if controller.controller_name == "roombookings" %>"><%= link_to "Bookings", roombookings_path(), class: "nav-link nav-item" %></li>
       <li class="<%= 'active' if controller.controller_name == "registrations" %>"><%= link_to 'Your Profile', edit_user_registration_path, class: "nav-link nav-item" %></li>
-       <li class="<%= 'active' if controller.controller_name == "" %>"><%= link_to 'My Bookings', edit_user_registration_path, class: "nav-link nav-item" %></li>
+       <li class="<%= 'active' if controller.controller_name == "" %>"><%= link_to 'My Bookings', mybookings_path, class: "nav-link nav-item" %></li>
        <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link nav-item", :method => :delete %></li>
     <% else %>
       <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Log in', new_user_session_path, class: "nav-link nav-item" %></li>
