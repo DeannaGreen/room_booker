@@ -182,7 +182,7 @@ startTime();
   
 function testAjax() {
   $.ajax({
-    url:"https://deanna-roombooker.herokuapp.com/rooms/@room.id/jsonbookings.json",  
+    url:"https://deanna-roombooker.herokuapp.com/rooms/<%= @room.id %>/jsonbookings.json",  
     success:function(data) {
       jQuery("#schedule").timeSchedule({rows : data }); 
     }
