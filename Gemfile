@@ -10,8 +10,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'event-calendar', :require => 'event_calendar'
-
 #adding bootstrap
 gem 'bootstrap', '~> 4.0.0'
 
