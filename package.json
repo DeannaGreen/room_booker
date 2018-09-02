@@ -1,5 +1,9 @@
 {
   "name": "room_book",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "fullcalendar": "^3.9.0",
+    "fullcalendar-scheduler": "^1.9.4",
+    "jquery": "^3.3.1"
+  }
 }
