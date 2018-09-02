@@ -5,9 +5,9 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
-    @todaybookings = Roombooking.all.where("date_trunc('day',starttime) = ?", Date.today )
-    @tomorrowbookings = Roombooking.all.where("date_trunc('day',starttime) = ?", Date.tomorrow )
-    @yourbookings = Roombooking.all.where("user_id = '?'", current_user.id).where("date_trunc('day',starttime) >= ?", Date.today )
+    @todaybookings = Roombooking.all.where("date(starttime) = ?", Date.today )
+    @tomorrowbookings = Roombooking.all.where("date(starttime) = ?", Date.tomorrow )
+    @yourbookings = Roombooking.all.where("user_id = '?'", current_user.id).where("date(starttime) >= ?", Date.today )
   end
 
   # GET /homes/1
