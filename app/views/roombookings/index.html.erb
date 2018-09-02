@@ -1,6 +1,7 @@
-<div id="calendar"></div>
 
 <p id="notice"><%= notice %></p>
+
+<div id="calendar"></div>
 
 <h1>Roombookings</h1>
 
@@ -40,3 +41,9 @@
 <div class="btn btn-dark">
   <%= link_to 'New Roombooking', new_roombooking_path %>
 </div>
+
+<script>
+  $('#calendar').fullCalendar({
+    events: '/roombookings.json'
+  });
+</script>

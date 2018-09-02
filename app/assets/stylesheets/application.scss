@@ -15,10 +15,9 @@
  /* custom bootstrap variables must be set or imported before bootstrap */
 @import "bootstrap";
 
+@import "fullcalendar"
+
 /*
  *= require rails_bootstrap_forms
- */
-
- /*
  *= require fullcalendar
  */
