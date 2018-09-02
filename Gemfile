@@ -10,6 +10,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
 #adding bootstrap
 gem 'bootstrap', '~> 4.0.0'
 
