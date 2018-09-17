@@ -24,6 +24,8 @@ gem 'devise'
 
 gem 'bootstrap_form'
 
+gem 'apartment'
+
 group :production do
   gem 'pg'
 end
