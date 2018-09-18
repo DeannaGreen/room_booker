@@ -1,5 +1,11 @@
+class SubdomainConstraint
+  def self.matches?(request)
+    request.subdomain.present? && request.subdomain != 'www'
+  end
+end
+
+
 Rails.application.routes.draw do
-  resources :projects
   resources :companies
   resources :homes 
   resources :roombookings
@@ -8,7 +14,7 @@ Rails.application.routes.draw do
       
   get 'profile', to: 'users#show'
   
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'registrations'}
   root 'homes#index'
   resources :rooms do
     member do
@@ -17,6 +23,10 @@ Rails.application.routes.draw do
       get 'jsonbookings', to: 'rooms#jsonbookings'
     end
   end 
+
+  constraints SubdomainConstraint do
+    resources :projects
+  end
   
 
   
