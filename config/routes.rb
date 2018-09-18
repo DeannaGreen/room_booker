@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   resources :companies
   resources :homes 
   resources :roombookings
