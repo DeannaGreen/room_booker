@@ -14,7 +14,7 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
 #adding bootstrap
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.2'
 
 gem 'jquery-rails'
 
