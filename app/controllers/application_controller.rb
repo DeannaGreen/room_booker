@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
 	      store_location_for(:user, homes_path())
 	    end
 	  end
+
+	  def after_sign_in_path_for(resource)
+	  	# sign_in(:user, @account.user)	  	
+	  	root_url(subdomain: current_user.subdomain)
+	  end
 end
