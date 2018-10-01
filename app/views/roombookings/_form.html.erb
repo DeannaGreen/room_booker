@@ -23,7 +23,7 @@
      <div class ="form-group">
       <div class="field">
         <%= form.label :user_id %>
-        <% options = options_from_collection_for_select(@users, 'id', 'email' ,:user_id) %>
+        <% options = options_from_collection_for_select(@users, 'id', 'email' , @roombooking.user_id) %>
         <%= form.select :user_id,  options %>
       </div>
     </div>
