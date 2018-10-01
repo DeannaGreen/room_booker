@@ -9,9 +9,9 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <% if current_user %>
-            <li class="<%= 'active' if controller.controller_name == "homes" %>"><%= link_to "Home", homes_path(), class: "nav-link nav-item" %></li>
-            <li class="<%= 'active' if controller.controller_name == "rooms" %>"><%= link_to "Rooms", rooms_path(), class: "nav-link nav-item" %></li>
-            <li class="<%= 'active' if controller.controller_name == "roombookings" && action_name != "mybookings" %>"><%= link_to "Bookings", roombookings_path(), class: "nav-link nav-item" %></li>
+            <li class="nav-item <%= 'active' if controller.controller_name == "homes" %>"><%= link_to "Home", homes_path(), class: "nav-link" %></li>
+            <li class="nav-item <%= 'active' if controller.controller_name == "rooms" %>"><%= link_to "Rooms", rooms_path(), class: "nav-link" %></li>
+            <li class="nav-item <%= 'active' if controller.controller_name == "roombookings" && action_name != "mybookings" %>"><%= link_to "Bookings", roombookings_path(), class: "nav-link" %></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <%= 'active' if action_name == "mybookings" || controller.controller_name == "registrations" %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Profile
@@ -21,9 +21,9 @@
                 <a class="<%= 'active' if controller.controller_name == "registrations" %>"><%= link_to 'Edit Profile', edit_user_registration_path, class: "dropdown-item" %></a>
               </div>
             </li>
-             <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link nav-item", :method => :delete %></li>
+             <li class="nav-item <%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link", :method => :delete %></li>
           <% else %>
-            <li class="<%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Log in', new_user_session_path, class: "nav-link nav-item" %></li>
+            <li class="nav-item <%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Log in', new_user_session_path, class: "nav-link" %></li>
           <% end %>
 
         </ul>
