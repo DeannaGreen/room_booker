@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
 
 	  def after_sign_in_path_for(resource)
 	  	# sign_in(:user, @account.user)	  	
-	  	root_url( host: 'http://www.happymuffin.co.uk' , subdomain: current_user.subdomain)
+	  	root_url( domain: 'happymuffin.co.uk' , subdomain: current_user.subdomain)
 	  end
 end
