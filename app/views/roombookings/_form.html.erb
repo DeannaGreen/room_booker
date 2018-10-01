@@ -15,7 +15,7 @@
     <div class ="form-group">
       <div class="field">
         <%= form.label :room_id %>
-        <% options = options_from_collection_for_select(@rooms, 'id', 'roomname' , :room_id) %>
+        <% options = options_from_collection_for_select(@rooms, 'id', 'roomname' , @roombooking.room_id) %>
         <%= form.select :room_id,  options %>
       </div>
     </div>
