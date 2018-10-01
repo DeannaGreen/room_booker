@@ -1,6 +1,7 @@
 <!-- <%= controller.controller_name %> -->
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="navlogo"><img class="logo" src="<%= image_url('happymuffinlogo.png')%>"> </div>
   <ul class="navbar-nav">
     <% if current_user %>
       <li class="<%= 'active' if controller.controller_name == "homes" %>"><%= link_to "Home", homes_path(), class: "nav-link nav-item" %></li>
@@ -21,5 +22,4 @@
     <% end %>
     
   </ul>
-  <div class="navlogo"><img class="logo" src="<%= image_url('happymuffinlogo.png')%>"> </div>
-</nav>
+  </nav>
