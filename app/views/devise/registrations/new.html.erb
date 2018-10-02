@@ -21,10 +21,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-   <div class="field">
+  <div class="field">
     <%= f.label :subdomain %><br />
     <%= f.text_field :subdomain %>
   </div><br />
+
+  <%= f.hidden_field :admin, value: true %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
