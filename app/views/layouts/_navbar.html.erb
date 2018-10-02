@@ -29,6 +29,8 @@
             <li class="nav-item <%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Log in', new_user_session_path, class: "nav-link" %></li>
           <% end %>
 
+          <% current_user.admin %>
+
         </ul>
   </div>
   </nav>
