@@ -1,21 +1,4 @@
-{
-	<% @i = 0 %>
-	<% @bookings.each do |roomid , roombookings| %>
-	<% @i += 1 %>
-	"<%= @i %>": {
-		"title": "<%= roomid.roomname %>" ,
-		"schedule": [
-			 <% roombookings.each do | book| %>	
-			{
-			"start": "<%= book.starttime.strftime("%H:%M") %>",
-			"end": "<%= book.endtime.strftime("%H:%M") %>",
-			"text": "<%= book.description %>",
-			"data": {}
-		} <% if(book != roombookings.last) %> , <% end %>	
-		<% end %>
-		]
-          
-  	
-	}
-	<% end %>
-}
+json.array!(@bookings) do |roombooking|
+	json.extract! roombooking, :id, :room_id, :starttime, :endtime, :created_at, :updated_at, :description, :user_id
+	json.url roombooking_url(roombooking, format: :json)
+end
