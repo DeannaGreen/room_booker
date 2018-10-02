@@ -1,15 +1,18 @@
 class HomesController < ApplicationController
   before_action :set_home, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index]
 
   # GET /homes
   # GET /homes.json
-  def index
+  def dashboard
     @homes = Home.all
     @todaybookings = Roombooking.all.where("date(starttime) = ?", Date.today )
     @tomorrowbookings = Roombooking.all.where("date(starttime) = ?", Date.tomorrow )
     @yourbookings = Roombooking.all.where("user_id = '?'", current_user.id).where("date(starttime) >= ?", Date.today )
   end
 
+  def index
+  end
   # GET /homes/1
   # GET /homes/1.json
   def show
