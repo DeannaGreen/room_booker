@@ -19,8 +19,8 @@
       <h1 class="display-5 text-primary">Untill 5pm</h1>
       
     </div>
-	  <% if !@nextBooking.try(:new_record) 
-  			@nextBooking.description
+	  <% if !@nextBooking.try(:booking) 
+  		@nextBooking.description
 	 end %>
 
     <div class="col-6">
