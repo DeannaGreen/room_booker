@@ -52,6 +52,10 @@ startTime();
 </script>
 
 <script>
+  var today = new Date();
+  var h = today.getHours() + ":00:00";
+	
+	
   $('#calendar').fullCalendar({
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     events: '/rooms/<%= @room.id %>/bookings.json',
@@ -70,7 +74,7 @@ startTime();
         }
       },
       resourceLabelText: 'Rooms',
-  minTime: "07:00:00",
+  minTime: h,
   maxTime: "21:00:00"
   });
 </script>
