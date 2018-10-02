@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   after_create :create_tenant
 
+  attr_accessor :admin
+
 	private
 
 		def create_tenant
