@@ -19,7 +19,10 @@
       <h1 class="display-5 text-primary">Untill 5pm</h1>
       
     </div>
-	  <%= @nextBooking.description %>
+	  <% if !@foo.try(:new_record) 
+  @nextBooking.description
+ end %>
+
     <div class="col-6">
       <h1 class="display-4"><div id="panelClock"></div></h1>
     </div>
