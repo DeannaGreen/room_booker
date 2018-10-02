@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   before_action :set_home, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /homes
   # GET /homes.json
