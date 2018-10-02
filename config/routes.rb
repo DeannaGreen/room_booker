@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :roombookings
   
   get 'mybookings', to: 'roombookings#mybookings'
+  get 'dashboard', to: 'homes#dashboard'
       
   get 'profile', to: 'users#show'
   

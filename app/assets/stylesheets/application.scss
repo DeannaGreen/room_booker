@@ -26,3 +26,8 @@
 .logo {
    width:50px;
 }
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+.muffin {
+  padding-top: 5rem;
+}

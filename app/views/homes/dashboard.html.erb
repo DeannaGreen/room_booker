@@ -1,0 +1,63 @@
+<div id="calendar"></div>
+
+<script>
+  $('#calendar').fullCalendar({
+    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+    events: '/roombookings.json',
+    height: "auto", 
+    resources: '/rooms.json', 
+      header: {
+        left: 'today prev,next',
+        center: 'title',
+        right: 'timelineDay,timelineThreeDays,agendaWeek,month'
+      },
+      defaultView: 'timelineDay',
+      views: {
+        timelineThreeDays: {
+          type: 'timeline',
+          duration: { days: 3 }
+        }
+      },
+      resourceLabelText: 'Rooms',
+     minTime: "07:00:00",
+     maxTime: "19:00:00"
+  });
+</script>
+
+<br></br>
+
+<table>
+
+  <tbody>
+    <% @homes.each do |home| %>
+      <tr>
+        <td><%= home.paragraph_1 %></td>
+        <td><%= home.paragraph_2 %></td>
+        <td><%= home.paragraph_3 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Todays Bookings</h2>
+      <%= render partial: "rooms/bookings", locals: {bookings: @todaybookings} %>    
+    </div>
+    <div class="col">
+      <h2>Tomorrows Bookings</h2>
+      <%= render "rooms/bookings", bookings: @tomorrowbookings %>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+      <h2>Your Bookings</h2>
+      <%= render partial: "rooms/bookings", locals: {bookings: @yourbookings} %>    
+    </div>
+  </div>
+</div>
+
+
+<br>
+
