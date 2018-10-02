@@ -13,7 +13,8 @@
     <%= render ('layouts/navbar')%>
   <div class="container">
     <% flash.each do |key, value| %>
-          <div class="<%= flash_class(key) %>">
+          <div class="<%= flash_class(key) %> alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <%= value %> <%= key %>
           </div>
     <% end %>
