@@ -87,7 +87,7 @@ function refreshPanel() {
 	desc = data.nextbooking.description;
      
 	  var dt = new Date(data.currentbooking.endtime);
-	  dt.setTime( dt.getTime() - new Date().getTimezoneOffset()*60*1000 );
+	
 	   hours = dt.getHours(),
       		minutes = dt.getMinutes();
 
