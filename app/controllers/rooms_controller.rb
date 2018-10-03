@@ -42,10 +42,11 @@ def jsonbookings
     @bookings = Roombooking.includes(:user).where(room_id: @room.id)
     @nextBooking = Roombooking.includes(:user).where(room_id: @room.id).where("date(endtime) >= ?", DateTime.now).order(endtime: :desc).first
     
-      respond_to do |format|
-      render layout: 'panel'
-      render json: 'panel'
+    respond_to do |format|
+        format.html
+        format.json
     end
+    render layout: 'panel'
   end
 
   # GET /rooms/1/edit
