@@ -57,27 +57,7 @@ startTime();
   var h = today.getHours() + ":00:00";
 	
 	
-  $('#calendar').fullCalendar({
-    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    events: '/rooms/<%= @room.id %>/bookings.json',
-    height: "auto", 
-    resources: '/rooms/<%= @room.id %>.json', 
-      header: {
-        left: 'today prev,next',
-        center: 'title',
-        right: 'timelineDay,timelineThreeDays,agendaWeek,month'
-      },
-      defaultView: 'timelineDay',
-      views: {
-        timelineThreeDays: {
-          type: 'timeline',
-          duration: { days: 3 }
-        }
-      },
-      resourceLabelText: 'Rooms',
-  minTime: h ,
-  maxTime: "21:00:00"      
-  });
+  
 
 function refreshPanel() {
   $.ajax({
@@ -110,6 +90,30 @@ function refreshPanel() {
  	$('#currentMeetingDesc').html(data.currentbooking.description); 
 		  
 	 
+	
+	$('#calendar').fullCalendar({
+	    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+	    events: '/rooms/<%= @room.id %>/bookings.json',
+	    height: "auto", 
+	    resources: '/rooms/<%= @room.id %>.json', 
+	      header: {
+		left: 'today prev,next',
+		center: 'title',
+		right: 'timelineDay,timelineThreeDays,agendaWeek,month'
+	      },
+	      defaultView: 'timelineDay',
+	      views: {
+		timelineThreeDays: {
+		  type: 'timeline',
+		  duration: { days: 3 }
+		}
+	      },
+	      resourceLabelText: 'Rooms',
+	  minTime: h ,
+	  maxTime: "21:00:00"      
+	  });
+	
+	
     }
   });
 }
