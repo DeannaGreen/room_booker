@@ -42,6 +42,12 @@ def jsonbookings
     @bookings = Roombooking.includes(:user).where(room_id: @room.id)
     @nextBooking = Roombooking.includes(:user).where(room_id: @room.id).where("endtime >= ?", DateTime.now).order(endtime: :desc).first
     @currentBooking = Roombooking.includes(:user).where(room_id: @room.id).where("starttime <= ? and endtime >= ?", DateTime.now,DateTime.now).order(endtime: :desc).first
+   if (@currentBooking.nil?)
+     @currentBooking =  @nextBooking
+     @currentBooking.description = "Available"
+     @currentBooking.endtime =  @currentBooking.starttime
+     
+   end 
     
     respond_to do |format|
         format.html
