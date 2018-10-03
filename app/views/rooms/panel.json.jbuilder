@@ -1,6 +1,8 @@
 
-json.nextbooking do
-  json.child! do
-    json.(@nextBooking, :id, :description)
+json.data do
+  json.nextbooking do
+    json.child! do
+      json.(@nextBooking, :id, :description)
+    end
   end
-end
+end 
