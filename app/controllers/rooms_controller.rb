@@ -41,7 +41,7 @@ def jsonbookings
   def panel
     @bookings = Roombooking.includes(:user).where(room_id: @room.id)
     @nextBooking = Roombooking.includes(:user).where(room_id: @room.id).where("date(endtime) >= ?", DateTime.now).order(endtime: :desc).first
-    @currentBooking = Roombooking.includes(:user).where(room_id: @room.id).where("date(starttime) >= ? and date(endtime) <= ?", DateTime.now,DateTime.now).order(endtime: :desc).first
+    @currentBooking = Roombooking.includes(:user).where(room_id: @room.id).where("date(starttime) <= ? and date(endtime) >= ?", DateTime.now,DateTime.now).order(endtime: :desc).first
     
     respond_to do |format|
         format.html
