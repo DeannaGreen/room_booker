@@ -19,6 +19,7 @@
       <h1 class="display-5 text-primary">Untill 5pm</h1>
       
     </div>
+	  <div id="nextMeetingDesc"></div>
 	  <%= @nextBooking&.description %>
 
     <div class="col-6">
@@ -79,4 +80,15 @@ startTime();
   minTime: h ,
   maxTime: "21:00:00"      
   });
+
+function refreshPanel() {
+  $.ajax({
+    url:"/rooms/<%= @room.id %>/panel.json",  
+    success:function(nextbooking) {
+      $("#nextMeetingDesc").html(nextbooking.description); 
+    }
+  });
+}
+	
+ refreshPanel();
 </script>
