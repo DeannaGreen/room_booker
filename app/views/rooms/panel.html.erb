@@ -84,9 +84,9 @@ startTime();
 function refreshPanel() {
   $.ajax({
     url:"/rooms/<%= @room.id %>/panel.json",  
-    success:function(nextbooking) {
-      $('#nextMeetingDesc').html(nextbooking.description); 
-	  alert(nextbooking);
+    success:function(data) {
+      $('#nextMeetingDesc').html(data.nextbooking.description); 
+	  alert(data);
     }
   });
 }
