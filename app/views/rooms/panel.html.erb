@@ -7,7 +7,7 @@
 <div class="container-fluid d-flex flex-column">
   <div class="row">
     <div class="col-10">
-      <h1 class="display-2"> <%= @room.roomname %>  :   <%= @currentBooking&.description %></h1>
+      <h1 class="display-2"> <%= @room.roomname %></h1>
     </div>
     <div class="col-2">
       <h1 class="display-5 float-right"><div id="panelClock"></div></h1>
@@ -15,7 +15,7 @@
   </div>
   <div class="row my-auto">
     <div class="col-6">
-      <h1 class="display-4 text-primary">Avaliable</h1>
+      <h1 class="display-4 text-primary">Avaliable :  <%= @currentBooking&.description %></h1>
       <h1 class="display-5 text-primary">Untill 5pm</h1>
       
     </div>
@@ -88,7 +88,7 @@ function refreshPanel() {
     success:function(data) {
 	desc = data.nextbooking.description;
       $('#nextMeetingDesc').html(data.nextbooking.description); 
-	  alert(data.nextbooking.description);
+	 
     }
   });
 }
