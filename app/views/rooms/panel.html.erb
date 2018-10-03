@@ -17,7 +17,7 @@
     <div class="col-6">
 	 
       <h1 class="display-4 text-primary"><div id="currentMeetingDesc"></div></h1>
-      <h1 class="display-5 text-primary">Untill <div id="currentMeetingTime"></div></h1>
+      <h1 class="display-5 text-primary"><div id="currentMeetingTime"></div></h1>
       
     </div>
     <div class="col-6">
@@ -106,7 +106,7 @@ function refreshPanel() {
 
 	
 	  
-	   $('#currentMeetingTime').html(hours + ":" + minutes + " " + suffix); 
+	$('#currentMeetingTime').html("Untill " + hours + ":" + minutes + " " + suffix); 
  	$('#currentMeetingDesc').html(data.currentbooking.description); 
 		  
 	 
