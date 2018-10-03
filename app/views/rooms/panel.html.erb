@@ -83,11 +83,12 @@ startTime();
 
 function refreshPanel() {
   $.ajax({
-    url:"/rooms/<%= @room.id %>/jsonbookings.json",  
+    url:"/rooms/<%= @room.id %>/panel.json",  
+	  dataType: "json",
     success:function(data) {
-	
-      $('#nextMeetingDesc').html(data); 
-	  alert(data.data);
+	desc = data.nextbooking.description;
+      $('#nextMeetingDesc').html(data.nextbooking.description); 
+	  alert(data.nextbooking.description);
     }
   });
 }
