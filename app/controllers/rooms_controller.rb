@@ -40,8 +40,8 @@ def jsonbookings
   # GET /rooms/1/panel
   def panel
     @bookings = Roombooking.includes(:user).where(room_id: @room.id)
-    @nextBooking = Roombooking.includes(:user).where(room_id: @room.id).where("date(endtime) >= ?", DateTime.now).order(endtime: :desc).first
-    @currentBooking = Roombooking.includes(:user).where(room_id: @room.id).where("date(starttime) <= ? and date(endtime) >= ?", DateTime.now,DateTime.now).order(endtime: :desc).first
+    @nextBooking = Roombooking.includes(:user).where(room_id: @room.id).where("endtime >= ?", DateTime.now).order(endtime: :desc).first
+    @currentBooking = Roombooking.includes(:user).where(room_id: @room.id).where("starttime <= ? and endtime >= ?", DateTime.now,DateTime.now).order(endtime: :desc).first
     
     respond_to do |format|
         format.html
