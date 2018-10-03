@@ -1,8 +1,8 @@
 json.nextbooking do
   json.(@nextBooking, :id, :description)
 end
-unless @currentbooking.nil?
+unless @currentBooking.nil?
   json.currentbooking do
-    json.(@currentbooking, :id, :description)
+    json.(@currentBooking, :id, :description)
   end
 end 
