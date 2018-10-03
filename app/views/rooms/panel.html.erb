@@ -85,7 +85,7 @@ function refreshPanel() {
   $.ajax({
     url:"/rooms/<%= @room.id %>/panel.json",  
     success:function(data) {
-      $('#nextMeetingDesc').html(data.nextbooking.description); 
+      $('#nextMeetingDesc').html(data); 
 	  alert(data);
     }
   });
