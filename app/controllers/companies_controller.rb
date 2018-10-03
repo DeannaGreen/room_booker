@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
   # GET /companies
   # GET /companies.json
@@ -24,17 +25,18 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.new(company_params)
+    @company = Company.create_with_admin(company_params, user_params)
+    # binding.pry
 
-    respond_to do |format|
-      if @company.save
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
-        format.json { render :show, status: :created, location: @company }
-      else
-        format.html { render :new }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @company.save
+    #     format.html { redirect_to @company, notice: 'Company was successfully created.' }
+    #     format.json { render :show, status: :created, location: @company }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @company.errors, status: :unprocessable_entity }
+    #   end
+    #end
   end
 
   # PATCH/PUT /companies/1
@@ -70,5 +72,9 @@ class CompaniesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       params.require(:company).permit(:companyname, :subdomain)
+    end
+
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end
