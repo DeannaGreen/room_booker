@@ -85,7 +85,27 @@ function refreshPanel() {
 	  dataType: "json",
     success:function(data) {
 	desc = data.nextbooking.description;
-      $('#currentMeetingTime').html(data.currentbooking.endtime); 
+     
+	  var dt = new Date(data.currentbooking.endtime);
+	   hours = dt.getHours(),
+      		minutes = dt.getMinutes();
+
+	if (minutes < 10) {
+	 minutes = "0" + minutes;
+  }
+
+	var suffix = "AM";
+	if (hours >= 12) {
+    suffix = "PM";
+    hours = hours - 12;
+	}
+	if (hours == 0) {
+	 hours = 12;
+	}
+
+	
+	  
+	   $('#currentMeetingTime').html(hours + ":" + minutes + " " + suffix); 
  	$('#currentMeetingDesc').html(data.currentbooking.description); 
 		  
 	 
