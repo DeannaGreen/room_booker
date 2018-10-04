@@ -28,6 +28,8 @@ class CompaniesController < ApplicationController
     @company = Company.create_with_admin(company_params, user_params)
 
     redirect_to @company, notice: 'Company was successfully created.'
+
+    sign_in(:user, user_params.user)
     # respond_to do |format|
     #   if @company.save
     #     format.json { render :show, status: :created, location: @company }
