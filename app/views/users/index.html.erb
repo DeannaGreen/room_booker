@@ -1,0 +1,24 @@
+  <p id="notice"><%= notice %></p>
+
+  <h1>Users</h1>
+
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+
+  <br>
+
+  <div class="btn btn-dark">
+    <%=# link_to 'New Room', new_room_path %>
+  </div>
