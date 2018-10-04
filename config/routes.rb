@@ -7,7 +7,8 @@ end
 
 Rails.application.routes.draw do
   resources :companies
-  resources :homes 
+  resources :users, only: %i[index]
+  resources :homes
   resources :roombookings
   
   get 'mybookings', to: 'roombookings#mybookings'
