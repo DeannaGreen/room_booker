@@ -26,11 +26,10 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.create_with_admin(company_params, user_params)
-    # binding.pry
 
+    redirect_to @company, notice: 'Company was successfully created.'
     # respond_to do |format|
     #   if @company.save
-    #     format.html { redirect_to @company, notice: 'Company was successfully created.' }
     #     format.json { render :show, status: :created, location: @company }
     #   else
     #     format.html { render :new }
