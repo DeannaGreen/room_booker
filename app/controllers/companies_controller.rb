@@ -29,8 +29,10 @@ class CompaniesController < ApplicationController
 
     redirect_to @company, notice: 'Company was successfully created.'
 
-    sign_in(:user, user_params.user)
-    # respond_to do |format|
+      
+
+    sign_in  User.first
+    # respond_to do |format|find_by_email(user_params[:email])
     #   if @company.save
     #     format.json { render :show, status: :created, location: @company }
     #   else
