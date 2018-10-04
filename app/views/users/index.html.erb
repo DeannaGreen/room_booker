@@ -20,7 +20,8 @@
   <br>
 
   <% if current_user.admin? %>
-    <div class="btn btn-dark">
-      <%= link_to 'New User', new_user_path %>
+    <div class='col-auto'>
+      <button type="submit" class="btn btn-dark"><%= link_to 'New User', new_user_path %></button>
     </div>
+
   <% end %>
