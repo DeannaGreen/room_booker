@@ -26,7 +26,7 @@ class RoombookingsController < ApplicationController
   def new
     @roombooking = Roombooking.new
     @rooms = Room.all
-    @users = User.where("subdomain = ?", current_user.subdomain)
+    @users = User.all
   end
 
   # GET /roombookings/1/edit
