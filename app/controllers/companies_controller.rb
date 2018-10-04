@@ -27,11 +27,11 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.create_with_admin(company_params, user_params)
 
-    redirect_to @company, notice: 'Company was successfully created.'
+    redirect_to request.url.sub(@company, 'www'), notice: 'Company was successfully created.'
 
       
 
-    sign_in2  User.first
+    #sign_in2  User.first
     # respond_to do |format|find_by_email(user_params[:email])
     #   if @company.save
     #     format.json { render :show, status: :created, location: @company }
