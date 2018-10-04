@@ -31,7 +31,7 @@ class CompaniesController < ApplicationController
 
       
 
-    sign_in  User.first
+    sign_in2  User.first
     # respond_to do |format|find_by_email(user_params[:email])
     #   if @company.save
     #     format.json { render :show, status: :created, location: @company }
