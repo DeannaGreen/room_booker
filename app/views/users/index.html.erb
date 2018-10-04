@@ -19,5 +19,8 @@
 
   <br>
 
-  <div class="btn btn-dark">
-  </div>
+  <% if current_user.admin? %>
+    <div class="btn btn-dark">
+      <%= link_to 'New User', new_user_path %>
+    </div>
+  <% end %>
