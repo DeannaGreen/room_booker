@@ -25,6 +25,7 @@ class RoombookingsController < ApplicationController
   # GET /roombookings/new
   def new
     @roombooking = Roombooking.new
+    @roombooking.user_id = current_user.id
     @rooms = Room.all
     @users = User.all
   end
