@@ -39,6 +39,7 @@ class RoombookingsController < ApplicationController
   # POST /roombookings.json
   def create
     @roombooking = Roombooking.new(roombooking_params)
+    @roombooking.user_id = current_user.id
     @rooms = Room.all
     @users = User.where("subdomain = ?", current_user.subdomain)
 
