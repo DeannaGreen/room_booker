@@ -29,7 +29,10 @@
          
 
         </ul>
-      <div class="text-light"> <% current_user&.subdomain %> </div>
+      <% if current_user %>
+      <div class="text-light"> <% current_user.email %> </div>
+    
+     <% end %>
   </div>
   </nav>
 
