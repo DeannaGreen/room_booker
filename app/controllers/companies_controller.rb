@@ -25,12 +25,12 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.create_with_admin(company_params, user_params)
+    @company , @user = Company.create_with_admin(company_params, user_params)
 
    # redirect_to request.url.sub(@company, 'www'), notice: 'Company was successfully created.'
 
   
-    @user = User.new(user_params.merge(admin: true,subdomain:@company.subdomain))
+    #@user = User.new(user_params.merge(admin: true,subdomain:@company.subdomain))
     sign_in_and_redirect @user
     # respond_to do |format|find_by_email(user_params[:email])
     #   if @company.save
