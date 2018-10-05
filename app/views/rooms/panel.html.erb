@@ -7,7 +7,7 @@
 <div class="container-fluid d-flex flex-column">
   <div class="row">
     <div class="col-10">
-      <h1 class="display-2"> <%= @room.roomname %> </h1>
+      <h1 class="display-2"> <%= @room.roomname %></h1>
     </div>
     <div class="col-2">
       <h1 class="display-5 float-right"><div id="panelClock"></div></h1>
@@ -15,12 +15,11 @@
   </div>
   <div class="row my-auto">
     <div class="col-6">
-      <h1 class="display-4 text-primary">Avaliable</h1>
-      <h1 class="display-5 text-primary">Untill 5pm</h1>
+	 
+      <h1 class="display-4 text-primary"><div id="currentMeetingDesc"></div></h1>
+      <h1 class="display-5 text-primary"><div id="currentMeetingTime"></div></h1>
       
     </div>
-	  <%= @nextBooking&.description %>
-
     <div class="col-6">
       <h1 class="display-4"><div id="panelClock"></div></h1>
     </div>
@@ -57,26 +56,67 @@ startTime();
   var today = new Date();
   var h = today.getHours() + ":00:00";
 	
+	$('#calendar').fullCalendar({
+	    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+	    events: '/rooms/<%= @room.id %>/bookings.json',
+	    height: "auto", 
+	    resources: '/rooms/<%= @room.id %>.json', 
+	      header: {
+		left: 'today prev,next',
+		center: 'title',
+		right: 'timelineDay,timelineThreeDays,agendaWeek,month'
+	      },
+	      defaultView: 'timelineDay',
+	      views: {
+		timelineThreeDays: {
+		  type: 'timeline',
+		  duration: { days: 3 }
+		}
+	      },
+	      resourceLabelText: 'Rooms',
+	  minTime: h ,
+	  maxTime: "21:00:00"      
+	  });
+		
+  
+
+function refreshPanel() {
+  $.ajax({
+    url:"/rooms/<%= @room.id %>/panel.json",  
+	  dataType: "json",
+    success:function(data) {
+	desc = data.nextbooking.description;
+     
+	  var dt = new Date(data.currentbooking.endtime);
 	
-  $('#calendar').fullCalendar({
-    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    events: '/rooms/<%= @room.id %>/bookings.json',
-    height: "auto", 
-    resources: '/rooms/<%= @room.id %>.json', 
-      header: {
-        left: 'today prev,next',
-        center: 'title',
-        right: 'timelineDay,timelineThreeDays,agendaWeek,month'
-      },
-      defaultView: 'timelineDay',
-      views: {
-        timelineThreeDays: {
-          type: 'timeline',
-          duration: { days: 3 }
-        }
-      },
-      resourceLabelText: 'Rooms',
-  minTime: h ,
-  maxTime: "21:00:00"      
+	   hours = dt.getHours(),
+      		minutes = dt.getMinutes();
+
+	if (minutes < 10) {
+	 minutes = "0" + minutes;
+  }
+
+	var suffix = "AM";
+	if (hours >= 12) {
+    suffix = "PM";
+    hours = hours - 12;
+	}
+	if (hours == 0) {
+	 hours = 12;
+	}
+
+	
+	  
+	$('#currentMeetingTime').html("Untill " + hours + ":" + minutes + " " + suffix); 
+ 	$('#currentMeetingDesc').html(data.currentbooking.description); 
+		  
+	 
+	
+
+	$('#calendar').fullCalendar( 'refetchEvents' );
+    }
   });
+}
+	
+ refreshPanel();
 </script>
