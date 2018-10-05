@@ -8,9 +8,9 @@ class Company < ApplicationRecord
 		if company.valid? && user.valid?
 			company.save
 			Apartment::Tenant.switch(company.subdomain) { user.save }
-			company , user
+			return company , user
 		else
-			false , false 
+			return false , false 
 		end
 	end
 
