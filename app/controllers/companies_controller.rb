@@ -31,7 +31,7 @@ class CompaniesController < ApplicationController
 
       
 
-    sign_out_and_redirect User.first
+    sign_out_and_redirect User.new
     # respond_to do |format|find_by_email(user_params[:email])
     #   if @company.save
     #     format.json { render :show, status: :created, location: @company }
