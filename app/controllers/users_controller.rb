@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.create(user_params)
+		@user = User.create(user_params.merge(admin: false,subdomain:current_user.subdomain))
 		redirect_to users_path
 	end
 
