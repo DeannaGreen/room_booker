@@ -29,7 +29,7 @@ class CompaniesController < ApplicationController
 
    # redirect_to request.url.sub(@company, 'www'), notice: 'Company was successfully created.'
 
-      
+    notice: 'test.'
     @user = User.new(user_params.merge(admin: true,subdomain:@company.subdomain))
     sign_in_and_redirect @user
     # respond_to do |format|find_by_email(user_params[:email])
