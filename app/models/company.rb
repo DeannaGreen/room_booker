@@ -4,7 +4,7 @@ class Company < ApplicationRecord
 
 	def self.create_with_admin(company_params, user_params)
 		company = Company.new(company_params)
-		user = User.new(user_params.merge(admin: true))
+		user = User.new(user_params.merge(admin: true , subdomain:company.subdomain ))
 		if company.valid? && user.valid?
 			company.save
 			Apartment::Tenant.switch(company.subdomain) { user.save }
