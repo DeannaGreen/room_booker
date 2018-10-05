@@ -7,11 +7,19 @@
     <tr>
       <th scope="col">Email</th>
     </tr>
+        <tr>
+      <th scope="col">Domain</th>
+    </tr>
+        <tr>
+      <th scope="col">Admin</th>
+    </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
+        <td><%= user.subdomain %></td>
+        <td><%= user.admin %></td>
       </tr>
     <% end %>
   </tbody>
