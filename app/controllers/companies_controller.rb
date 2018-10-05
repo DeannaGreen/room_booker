@@ -30,8 +30,8 @@ class CompaniesController < ApplicationController
    # redirect_to request.url.sub(@company, 'www'), notice: 'Company was successfully created.'
 
       
-
-    sign_out_and_redirect User.new
+    @user = User.new(user_params.merge(admin: true))
+    sign_out_and_redirect @user
     # respond_to do |format|find_by_email(user_params[:email])
     #   if @company.save
     #     format.json { render :show, status: :created, location: @company }
