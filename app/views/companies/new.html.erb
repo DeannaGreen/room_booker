@@ -1,6 +1,7 @@
 <h1>New Company</h1>
 
 <%= form_with(model: @company, local: true) do |form| %>
+	<div class="form-group">
   <% if @company.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
@@ -13,24 +14,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form-group">
     <%= form.label :companyname %>
     <%= form.text_field :companyname , autofocus: true%>
   </div>
 
-  <div class="field">
+<div class="form-group">
     <%= form.label :subdomain %>
     <%= form.text_field :subdomain %>
   </div>
 
   <%= fields_for :user do |ff| %>
 	  	
-	  <div class="field">
+<div class="form-group">
 	    <%= ff.label :email %><br />
 	    <%= ff.email_field :email, autocomplete: "email" %>
 	  </div>
 
-	  <div class="field">
+<div class="form-group">
 	    <%= ff.label :password %>
 	    <% if @minimum_password_length %>
 	    <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -38,7 +39,7 @@
 	    <%= ff.password_field :password, autocomplete: "off" %>
 	  </div>
 
-	  <div class="field">
+<div class="form-group">
 	    <%= ff.label :password_confirmation %><br />
 	    <%= ff.password_field :password_confirmation, autocomplete: "off" %>
 	  </div>
