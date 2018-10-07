@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.find_by_subdomain(current_user.subdomain)
+    @company = Company.find_by_subdomain(current_user.subdomain)
   end
 
   # GET /companies/1
