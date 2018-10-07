@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :set_user
 
 	def index
 		@users = User.all
@@ -14,7 +15,6 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user = User.find(params[:id])
 	end
 
 	def update
