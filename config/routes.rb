@@ -7,7 +7,7 @@ end
 
 Rails.application.routes.draw do
   resources :companies
-  resources :users, only: %i[index new create]
+  resources :users, only: %i[index new create edit destroy upadate]
   resources :homes
   resources :roombookings
   

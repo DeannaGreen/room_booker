@@ -33,7 +33,7 @@ class RoombookingsController < ApplicationController
   # GET /roombookings/1/edit
   def edit
     @rooms = Room.all
-    @users = User.where("subdomain = ?", current_user.subdomain)
+    @users = User.all
   end
 
   # POST /roombookings
@@ -41,7 +41,7 @@ class RoombookingsController < ApplicationController
   def create
     @roombooking = Roombooking.new(roombooking_params)
     @rooms = Room.all
-    @users = User.where("subdomain = ?", current_user.subdomain)
+    @users = User.all
 
     respond_to do |format|
       if @roombooking.save
