@@ -23,9 +23,9 @@
               </div>
             </li>
 
-            <% if current_user.admin %>
-              <li class="nav-item <%= 'active' if controller.controller_name == "companies" %>"><%= link_to "Company", edit_company_path(), class: "nav-link" %></li>
-            <% end %>
+            <% #if current_user.admin %>
+              <!-- <li class="nav-item <%= 'active' if controller.controller_name == "companies" %>"><%= link_to "Company", edit_company_path(), class: "nav-link" %></li> -->
+            <% #end %>
 
 
              <li class="nav-item <%= 'active' if controller.controller_name == "sessions" %>"><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link", :method => :delete %></li>
