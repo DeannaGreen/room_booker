@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-
+        before_validation :downcase_subdomain
 	after_create :create_tenant
 
 	def self.create_with_admin(company_params, user_params)
@@ -22,12 +22,19 @@ class Company < ApplicationRecord
 			return false , false 
 		end
 	end
+	
+	    
 
 	private
 
 	def create_tenant
 		Apartment::Tenant.create(subdomain)
 	end
+	
+	def downcase_subdomain
+            self.subdomain = subdomain.try(:downcase) 
+        end 
+	
 	
 end
 
