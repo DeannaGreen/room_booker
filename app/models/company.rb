@@ -8,7 +8,16 @@ class Company < ApplicationRecord
 		if company.valid? && user.valid?
 			company.save
 
-			Apartment::Tenant.switch(company.subdomain) { user.save }
+			Apartment::Tenant.switch(company.subdomain) { 
+				user.save
+				
+				# create some demo data
+    				room = Room.new(:roomname => 'Meeting Room 1')
+  				room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => @user.id)
+	  
+    				room.save
+				
+				}
 			
 			return company , user
 		else
