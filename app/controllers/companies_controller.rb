@@ -31,12 +31,16 @@ class CompaniesController < ApplicationController
 
   
     #@user = User.new(user_params.merge(admin: true,subdomain:@company.subdomain))
-    sign_in_and_redirect @user
-    
+	  
     # create some demo data
     room = Room.new(:roomname => 'Meeting Room 1')
-		room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => @user.id)
-		room.save
+    room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => @user.id)
+    room.save
+	  
+	  
+    sign_in_and_redirect @user
+    
+
     
     # respond_to do |format|find_by_email(user_params[:email])
     #   if @company.save
