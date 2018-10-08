@@ -33,9 +33,10 @@ class CompaniesController < ApplicationController
     #@user = User.new(user_params.merge(admin: true,subdomain:@company.subdomain))
 	  
     # create some demo data
-    @room = Room.new(:roomname => 'Meeting Room 1')
-    @room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => @user.id)
-    @room.save
+    room = Room.new(:roomname => 'Meeting Room 1')
+  #  room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => @user.id)
+	  
+    room.save
 	  
 	  
     sign_in_and_redirect @user
