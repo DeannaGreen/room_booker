@@ -6,6 +6,18 @@ class HomesController < ApplicationController
   # GET /homes.json
   def dashboard
     @homes = Home.all
+    if Room.count == 0 
+      # create some demo data
+      t = Time.now  1*60*60
+      t2 = Time.now  2*60*60
+      
+      room = Room.new(:roomname => 'Meeting Room 1')
+		  room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => current_user.id , :starttime = t , :endtime = t2 )
+      room.save
+      
+    end
+    
+    
     @todaybookings = Roombooking.all.where("date(starttime) = ?", Date.today )
     @tomorrowbookings = Roombooking.all.where("date(starttime) = ?", Date.tomorrow )
     @yourbookings = Roombooking.all.where("user_id = '?'", current_user.id).where("date(starttime) >= ?", Date.today )
