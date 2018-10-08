@@ -7,15 +7,13 @@ class Company < ApplicationRecord
 		user = User.new(user_params.merge(admin: true , subdomain:company.subdomain ))
 		if company.valid? && user.valid?
 			company.save
-
+			# create some demo data
+    				
+			room = Room.new(:roomname => 'Meeting Room 1')
+			#room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => @user.id)
 			Apartment::Tenant.switch(company.subdomain) { 
 				user.save
 				
-				# create some demo data
-    				room = Room.new(:roomname => 'Meeting Room 1')
-  				room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => @user.id)
-	  
-    				room.save
 				
 				}
 			
