@@ -10,7 +10,7 @@ class Company < ApplicationRecord
 
 			Apartment::Tenant.switch(company.subdomain) { user.save }
 			room = Room.new(:roomname => 'Meeting Room 1')
-			room.roombookings.build(:description => 'Happy Muffin Demo , :user_id => user.id)
+			room.roombookings.build(:description => 'Happy Muffin Demo' , :user_id => user.id)
 			room.save
 			
 			return company , user
