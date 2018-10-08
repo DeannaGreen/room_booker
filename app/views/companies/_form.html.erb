@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+ <div class="form-group">
     <%= form.label :companyname %>
-    <%= form.text_field :companyname %>
+    <%= form.text_field :companyname, class: 'form-control' %>
   </div>
 
-  <div class="field">
+<div class="form-group">
     <%= form.label :subdomain %>
-    <%= form.text_field :subdomain, :readonly => true %>
+    <%= form.text_field :subdomain, :readonly => true, class: 'form-control' %>
   </div>
 
   <div class="actions">
