@@ -55,7 +55,7 @@ startTime();
 <script>
 	function refreshPanel() {
 		
-
+$('#calendar').fullCalendar('destroy').empty();
   $.ajax({
     url:"/rooms/<%= @room.id %>/panel.json",  
 	  dataType: "json",
