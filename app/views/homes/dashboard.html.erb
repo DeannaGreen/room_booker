@@ -1,28 +1,5 @@
 <div id="calendar"></div>
 
-<script>
-  $('#calendar').fullCalendar({
-    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    events: '/roombookings.json',
-    height: "auto", 
-    resources: '/rooms.json', 
-      header: {
-        left: 'today prev,next',
-        center: 'title',
-        right: 'timelineDay,timelineThreeDays,agendaWeek,month'
-      },
-      defaultView: 'timelineDay',
-      views: {
-        timelineThreeDays: {
-          type: 'timeline',
-          duration: { days: 3 }
-        }
-      },
-      resourceLabelText: 'Rooms',
-     minTime: "07:00:00",
-     maxTime: "19:00:00"
-  });
-</script>
 
 <br></br>
 
@@ -61,3 +38,33 @@
 
 <br>
 
+
+<script>
+  
+  $( document ).ready(function() {
+    $('#calendar').fullCalendar('destroy').empty();
+    
+    $('#calendar').fullCalendar({
+      schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+      events: '/roombookings.json',
+      height: "auto", 
+      resources: '/rooms.json', 
+        header: {
+          left: 'today prev,next',
+          center: 'title',
+          right: 'timelineDay,timelineThreeDays,agendaWeek,month'
+        },
+        defaultView: 'timelineDay',
+        views: {
+          timelineThreeDays: {
+            type: 'timeline',
+            duration: { days: 3 }
+          }
+        },
+        resourceLabelText: 'Rooms',
+       minTime: "07:00:00",
+       maxTime: "19:00:00"
+    });
+    
+ });
+</script>
